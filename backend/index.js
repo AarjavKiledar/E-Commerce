@@ -37,7 +37,7 @@ app.use('/images', express.static(path.join(__dirname, 'upload', 'images'))); //
 app.post("/upload", upload.single('product'), (req, res) => {
     res.json({
         success: 1,
-        image_url: `https://your-backend-url.onrender.com/images/${req.file.filename}` // Corrected URL with deployed URL
+        image_url: `https://e-commerce-js8k.onrender.com/images/${req.file.filename}` // Corrected URL with deployed URL
     });
 });
 
