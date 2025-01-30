@@ -40,7 +40,7 @@ const Addproduct = () => {
     formData.append('product', image);
 
     try {
-      const response = await fetch('http://localhost:4000/upload', {
+      const response = await fetch('https://e-commerce-js8k.onrender.com/upload', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -59,7 +59,7 @@ const Addproduct = () => {
       console.log(product);
 
       try {
-        const response = await fetch('http://localhost:4000/addproduct', {
+        const response = await fetch('https://e-commerce-js8k.onrender.com/addproduct', {
           method: 'POST',
           headers: {
             Accept: 'application/json',

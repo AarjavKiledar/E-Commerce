@@ -19,7 +19,7 @@ export const LoginSignup = () => {
   const login=async()=>{
     console.log("Login Function Executed",formData)
     let responseData;
-    await fetch('http://localhost:4000/login',{
+    await fetch('https://e-commerce-js8k.onrender.com/login',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -40,7 +40,7 @@ export const LoginSignup = () => {
   const signup=async()=>{
     console.log("Signup Function Executed",formData);
     let responseData;
-    await fetch('http://localhost:4000/signup',{
+    await fetch('https://e-commerce-js8k.onrender.com/signup',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',

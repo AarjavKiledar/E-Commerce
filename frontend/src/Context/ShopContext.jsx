@@ -14,12 +14,12 @@ const ShopContextProvider = (props) => {
   const [cartItems, setCartItems] = useState(getDefaultCart());
 
   useEffect(()=>{
-    fetch('http://localhost:4000/allproducts')
+    fetch('https://e-commerce-js8k.onrender.com/allproducts')
     .then((response)=>response.json())
     .then((data)=>setAllProduct(data))
 
     if(localStorage.getItem('auth-token')){
-      fetch('http://localhost:4000/getcart',{
+      fetch('https://e-commerce-js8k.onrender.com/getcart',{
         method:'POST',
         headers:{
           Accept:'application/form-data',
@@ -37,7 +37,7 @@ const ShopContextProvider = (props) => {
   const addToCart = (itemId) => {
     setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4000/addtocart',{
+            fetch('https://e-commerce-js8k.onrender.com/addtocart',{
                 method:'POST',
                 headers:{
                     'Content-Type':'application/json',
@@ -60,7 +60,7 @@ const removeFromCart = (itemId) => {
     [itemId]: prev[itemId] > 0 ? prev[itemId] - 1 : 0, // Prevent negative values
   }));
 
-  fetch('http://localhost:4000/removefromcart', {
+  fetch('https://e-commerce-js8k.onrender.com/removefromcart', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -86,7 +86,7 @@ const removeFromCart = (itemId) => {
 
 // Function to fetch the updated cart from the backend
 const fetchCartData = () => {
-  fetch('http://localhost:4000/getcart', {
+  fetch('https://e-commerce-js8k.onrender.com/getcart', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
