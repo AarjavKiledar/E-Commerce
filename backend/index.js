@@ -211,6 +211,22 @@ app.post('/getcart', fetchUser, async (req, res) => {
   res.json(userData.cartData);
 });
 
+app.get('/newcollections',async(req,res)=>{
+  let products=await Product.find({});
+  let newcollection=products.slice(1).slice(-8);
+  console.log("New Collection is fetched successfully");
+  res.send(newcollection);
+})
+
+//creating end point for popular in women section
+app.get('/popularinwomen',async(req,res)=>{
+  let products=await Product.find({category:"women"});
+  let popular_in_women=products.slice(0,4);
+  console.log("Popualr in women fetched");
+  res.send(popular_in_women);
+})
+
+
 // Error Handling for missing environment variables (add to all routes as needed)
 app.listen(process.env.PORT || 4000, (error) => {
   if (!error) {
