@@ -36,7 +36,7 @@ app.use('/images',express.static('public/upload/images'));
 app.post("/upload",upload.single('product'),(req,res)=>{
     res.json({
         success:1,
-        image_url:`https://e-commerce-js8k.onrender.com/images/${req.file.filename}`
+        image_url:`https://raw.githubusercontent.com/AarjavKiledar/E-Commerce/refs/heads/main/backend/public/upload/images/${req.file.filename}`
     })
 })
 //if image is uploaded successfully then it will return the success message and the path of the image
